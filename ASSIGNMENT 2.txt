@@ -1,0 +1,118 @@
+
+def add():
+    print("add user")
+
+def modify():
+    print("modify user")
+
+def delete():
+    print("delete user")
+
+a= int(input("enter the number: "))
+match a:
+    case 1:
+        print(add())
+    case 2:
+        print(modify())
+    case 3:
+        print(delete())
+    case _:
+        print("done")
+__________________________________________
+2)
+a=int(input("enter the number: "))
+print(a*a)
+_________________________________________
+3)
+def myfun(a,b,c):
+    print (a,b,c)
+myfun('s',77,"Sakshi")
+__________________________________________
+4)def myfun1():
+    print ("MYFUN1")
+def myfun2():
+    myfun1()
+myfun2()
+__________________________________________
+5)
+a = int(input("enter the number:"))
+def myfun1():
+
+    if a>0:
+        return 1
+    elif a<0:
+        return -1
+    else:
+        return 0
+
+print(myfun1())
+________________________________________________
+6)
+def myfun1():
+    a = input("enter the name:")
+    if a.isupper():
+        a=a.lower()
+        print(a)
+    else :
+        a=a.upper()
+        print(a)
+
+myfun1()
+______________________________________________
+7)
+def myfun1():
+    a = input("enter the name:")
+    a=a.swapcase()
+    print(a)
+myfun1()
+______________________________________________
+8)
+def fun():
+    a = input("enter the name:")
+    if a.__len__()>=3 and a.__len__()<=5:
+        print (a)
+    else:
+        print("retry")
+fun()
+______________________________________________
+9)
+def myfun(*vars):
+    b=0
+    for a in vars:
+        b+=a
+    return b
+
+print(myfun(10,20,30,30,40))
+_________________________________________________
+10)
+1) create 3 functions "show1()","show2()" and "show3()"
+now define a function "caller" in such a way that it can accept any function as an argument and invoke the same.
+
+invoke caller function by passing show1,show2 and show3
+def show1():
+    print("call show1")
+def show2():
+    print("call show2")
+def show3():
+    print("call show3")
+def caller(fun):
+    fun()
+caller(show1)
+caller(show2)
+caller(show3)
+_________________________________________________________
+
+2) define nested function and show how will you invoke it.
+
+var=1000 #lacal
+def outer(): #Enclossing
+    num=1001
+    def inner():     # it's a closure # globle
+        val=5000 
+        print("inside inner function\t",num,"\t",var,"\t",val)
+    num=30
+    print("inside outer function",num,var)
+    return inner
+
+var1=outer()
+var1()
